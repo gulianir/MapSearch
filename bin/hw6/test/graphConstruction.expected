@@ -1,0 +1,11 @@
+# Load graph 
+loaded graph harryPotter
+
+# List the nodes 
+harryPotter contains: Dementors Harry Ron Voldemort 
+
+# List the children of each node
+the children of Harry in harryPotter are: Dementors(Book3) Ron(Book1) Ron(Book2) Ron(Book3) Voldemort(Book2)
+the children of Ron in harryPotter are: Dementors(Book3) Harry(Book1) Harry(Book2) Harry(Book3) Voldemort(Book2)
+the children of Voldemort in harryPotter are: Harry(Book2) Ron(Book2)
+the children of Dementors in harryPotter are: Harry(Book3) Ron(Book3)

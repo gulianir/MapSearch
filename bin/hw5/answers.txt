@@ -1,0 +1,122 @@
+CSE 331 Homework 5.  Answers to Written questions.
+Edit this file to supply your answers.
+
+Name: Rohan Guliani
+
+Problem 1. (Written exercises)
+
+(a)
+
+	IntQueue1:
+		RepInv:
+			No element of entries is null and entries is not null. 
+			
+		Abstraction Function: 
+			AF(q) where q is an instantiation of IntQueue1 = 
+				-Empty list {} if there are no elements
+				-{e_1...e_s} where e1 is next in line to be
+				 taken out and e_s was the most recent
+				 element added, and the size of q is s.
+				 
+	IntQueue2:
+		RepInv:
+			entries is not null and both size and front are 
+			<= entries.length-1 and both size and front >=0
+			
+		Abstraction Function: 
+			AF(q) where q is an instantiation of IntQueue1 = 
+			-Empty list {} if size equals 0
+			-{e_front...e_back} where e_front is at index
+			 front and e_back is at index front+size-1
+			(Notice the circular case {...e_back ___ e_front...}
+			where front+size-1 > entries.length simplifies to the 
+			second case at the abstract level). 
+			 
+
+
+(b)
+
+Queues a, d, and g all "equal" to {1,2} so they're equivalent at the abstract level. 
+Queues b and h "equal" {2,3,4} so they're equivalent. 
+Queues c and f "equal" {1,2,3} so they're equivalent. 
+
+
+(c)
+	1. 
+		The solveEquations method could not expose representation as it returns a primitive 
+		type that cannot further mutate/access anything from the class. 
+	2.
+		This method could contain potential representation exposure as the String array
+		is a mutable object. For example, if this method works with a field and ends
+		up returning the changed field, the client can take the returned object
+		and change it without directly calling mutator methods. 
+	3. 
+		If Date is not an immutable object, it could contain potential rep exposure for the 
+		same reason as (2). 
+	4. 
+		toString won't expose representation since the returned String is immutable. 
+	5. 
+		If the Iterator is the Iterator of a Collection from within the implementation of 
+		the class, and is mutable, it can potentially expose representation for the 
+		same reason as (2). 
+	6. 
+		If this Deck constructor doesn't make a copy of the argument that is passed in, 
+		then it could expose representation as Lists are mutable and the client can 
+		change the List passed in behind our backs, even after the object is
+		instantiated. 
+
+
+Problem 2.  (Graph interface/operations)
+	The operations I decided to include are pretty normal/expected for a Graph ADT. 
+	Adding/removing nodes and adding/removing edges are the most important operations
+	for a graph ADT. In addition to these, I included some getter methods, including 
+	getEdgesForNode(node) which returns a Set representation of the edges for a
+	particular node as well as the toString method which returns all the nodes and 
+	edges. I included other getter methods which returned ADTs as well: getGraph() 
+	returns a mapping of nodes and edges, getEdgesForNode(node) and
+	getNodes(). Finally, a size(), dup(), and isEmpty() methods are included for simplicity. 
+
+Problem 3.  (Testing strategy)
+	There were quite a number of tests to consider. What I tried doing was breaking it 
+	up into three parts: tests on the boundary between 0 and 1 nodes in a graph, 
+	tests with multiple nodes in the graph (but no edges), and finally tests with
+	multiple nodes and edges. Most of my public methods were tested in all three of these 
+	parts, but for some methods like getGraph(), it was sufficient to test in just one case
+	due to the nature of the method itself. The important methods such as removeNode and
+	addNode were tested in all three cases, however.
+	
+	My .test and .expected tests were more client-oriented than my GraphTest.java: instead
+	of testing for null etc., they test cases that the client is much more likely to 
+	deal with, such as simply adding nodes, adding edges, listing out children for a node,
+	and listing out the list of nodes. 
+	
+	After my representation was complete, I added a couple of tests to GraphTest.java 
+	to each of the three test boundary areas that utilized some of the implementation 
+	logic: for example, I knew that my Graph was a Map, so I could test equality and 
+	other such computations using methods from Map and Set classes. 
+
+Problem 4.  (Representation)
+	The representation I chose was an adjacent list, stored as a Map of 
+	Strings and Sets. This was because I utilized the assumption that no 
+	two nodes can/will contain the same data: since a Map stores its keys
+	in a Set, which is perfect for disallowing duplicates, I think it was 
+	a good choice. For the same reason, the children of a node also shouldn't
+	have duplicates, and hence the children of nodes were represented in Sets
+	as well. In my mind the adjacency list representation was a nice hybrid of the
+	other two potential implementations: it nicely stored the collection of all edges
+	(as values in the total Map) and also stored <A,B> pairs in the sense that A was
+	a particular node and B was an edge that it corresponds to. 
+	
+	One aspect of my implementation I realized a bit into actual coding was I ended up
+	representing everything in terms of Strings and didn't create explicit Node and Edge
+	classes. I think this worked out OK and actually made things simpler since we were 
+	allowed to assume that everything could be represented as a String. 
+	
+	Update: I ended up reading a spec incompletely (my bad, I know) and didn't realize our 
+	graph had to be labeled and be a multigraph. Hence, I caved in and created Node and 
+	Edge classes to encapsulate the extra field that is the label of the edges. I was
+	incredibly surprised to see how easy it was to simply tweak my code after creating
+	the extra classes! It really opened my eyes not only to the power of equals but also
+	how great careful code can be in terms of flexible designs :)
+	
+

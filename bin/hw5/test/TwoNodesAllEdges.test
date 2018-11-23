@@ -1,0 +1,19 @@
+# A complete 2 node graph with edges from every node
+
+# Create a graph
+CreateGraph testGraph
+
+# Add two nodes
+AddNode testGraph Node1
+AddNode testGraph Node2
+
+# Add all four edges
+AddEdge testGraph Node1 Node1 Edge1
+AddEdge testGraph Node1 Node2 Edge2
+AddEdge testGraph Node2 Node1 Edge3
+AddEdge testGraph Node2 Node2 Edge4
+
+# Print the nodes and edges
+ListNodes testGraph
+ListChildren testGraph Node1
+ListChildren testGraph Node2

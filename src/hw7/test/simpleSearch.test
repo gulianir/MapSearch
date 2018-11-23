@@ -1,0 +1,3 @@
+LoadGraph marvel marvel.tsv
+
+FindPath marvel HAWK BUZZ

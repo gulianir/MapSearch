@@ -1,0 +1,7 @@
+# Load graph 
+loaded graph harryPotter
+
+# find path 
+path from Voldemort to Dementors:
+Voldemort to Harry via Book2
+Harry to Dementors via Book3

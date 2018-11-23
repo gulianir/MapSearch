@@ -1,0 +1,2 @@
+# Load graph 
+LoadGraph harryPotter harryPotter.tsv

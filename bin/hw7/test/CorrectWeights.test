@@ -1,0 +1,6 @@
+LoadGraph hp harryPotter.tsv
+
+ListChildren hp Harry
+ListChildren hp Ron
+ListChildren hp Dementors
+ListChildren hp Voldemort

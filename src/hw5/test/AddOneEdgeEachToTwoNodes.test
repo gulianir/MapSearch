@@ -1,0 +1,12 @@
+# Create a graph
+CreateGraph testGraph
+
+# Add 1 node
+AddNode testGraph Node1
+
+# Add 1 more node
+AddNode testGraph Node2
+
+# Add 1 edge to each node
+AddEdge testGraph Node1 Node2 Edge1
+AddEdge testGraph Node2 Node1 Edge2

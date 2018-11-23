@@ -1,0 +1,5 @@
+# Load graph 
+LoadGraph harryPotter harryPotter.tsv
+
+# find path 
+FindPath harryPotter Harry Harry 

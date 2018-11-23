@@ -1,0 +1,6 @@
+loaded graph hp
+
+the children of Harry in hp are: Dementors(1.000) Ron(0.333) Voldemort(1.000)
+the children of Ron in hp are: Dementors(1.000) Harry(0.333) Voldemort(1.000)
+the children of Dementors in hp are: Harry(1.000) Ron(1.000)
+the children of Voldemort in hp are: Harry(1.000) Ron(1.000)

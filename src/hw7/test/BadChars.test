@@ -1,0 +1,3 @@
+LoadGraph hp harryPotter.tsv
+
+FindPath hp HAWK BUZZ

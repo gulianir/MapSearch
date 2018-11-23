@@ -1,0 +1,8 @@
+# Create a graph
+created graph testGraph
+
+# Add 1 node
+added node Node1 to testGraph
+
+# Add 1 more node
+added node Node2 to testGraph

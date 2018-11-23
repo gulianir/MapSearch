@@ -1,0 +1,12 @@
+# Create a graph
+created graph testGraph
+
+# Add 1 node
+added node Node1 to testGraph
+
+# Add 1 more node
+added node Node2 to testGraph
+
+# Add 1 edge to each node
+added edge Edge1 from Node1 to Node2 in testGraph
+added edge Edge2 from Node2 to Node1 in testGraph

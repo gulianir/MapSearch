@@ -1,0 +1,52 @@
+CSE 331 Homework 3.  Answers to Written questions.
+Edit this file to supply your answers.
+
+Name: Rohan Guliani
+
+Problem 6.
+
+(a) 
+The IllegalArgumentTest failed because the test for a negative number 
+in the Fibonacci code had the <= 0 check, but since 0 isn't a negative number, the test was failing.
+Changing the check to < 0 fixed this error. 
+
+(b)
+This test failed because Fibonacci was treating 2 as a base case. Changing the check from <= 2 to < 2 
+fixed this error. 
+
+(c)
+This test failed because we were subtracting the terms in the recursive case instead of adding them. 
+Adding them instead of subtracting them fixed this error. 
+
+
+Problem 7. 
+(a)
+There were a couple of problems with the Ball code. First, in the constructor 'volume=volume' makes no sense
+because volume refers to the passed argument and that statement doesn't do anything. To refer to the class field 
+I used 'this.volume=volume' and that fixed the error. Also, getVolume returns 0 every time which doesn't make sense; 
+it should return the actual volume instead. With these errors fixed the JUnit tests passed.
+
+(b)
+Since calculating the total volume is inexpensive, I think it's better to calculate volume in that one method
+getVolume() instead of changing the internal state of volume in add and remove because in the case we would 
+like to change getVolume's definition, if we're changing the volume in multiple places it's much harder to 
+re-implement. If we keep the getVolume calculation inside of the getVolume() method then we can re-implement 
+with ease if we would want to change its definition. 
+
+(c)
+	(1) For me, two ways to implement getBallsFromSmallest() jumped out: either contain functionality within
+	    the method itself or spread it out throughout the class, similar to the conundrum from 7 (a). In the 
+	    latter case, we could say keep track of two data structures: one which orders the Balls in as they 
+	    were added by the user (default) and one which orders the ball by volume. In the add method, we can 
+	    add the given Ball in both data structures in the different ways, and in the getBallsFromSmallest method,
+	    all we have to do is return the second data structure. In the former case we just sort the Balls as we see 
+	    fit and return the iterator.
+	     
+	(2) I prefer keeping functionality within the method itself. What if we changed our minds regarding 
+	    getBallsFromSmallest, and instead of sorting by volume, we sorted by something else? We would have
+	    to thread through the code to find all instances where we sort by volume and change it. Because sorting
+	    is also a relatively inexpensive operation, I believe it's much better to sort and create an iterator 
+	    just within the method and return the iterator when we're finished.   
+	    
+
+	

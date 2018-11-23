@@ -1,0 +1,19 @@
+# A complete 2 node graph with edges from every node
+
+# Create a graph
+created graph testGraph
+
+# Add two nodes
+added node Node1 to testGraph
+added node Node2 to testGraph
+
+# Add all four edges
+added edge Edge1 from Node1 to Node1 in testGraph
+added edge Edge2 from Node1 to Node2 in testGraph
+added edge Edge3 from Node2 to Node1 in testGraph
+added edge Edge4 from Node2 to Node2 in testGraph
+
+# Print the nodes and edges
+testGraph contains: Node1 Node2
+the children of Node1 in testGraph are: Node1(Edge1) Node2(Edge2)
+the children of Node2 in testGraph are: Node1(Edge3) Node2(Edge4)

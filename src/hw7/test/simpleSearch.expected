@@ -1,0 +1,8 @@
+loaded graph marvel
+
+path from HAWK to BUZZ:
+HAWK to CAPTAIN AMERICA with weight 0.003
+CAPTAIN AMERICA to SPIDER-MAN/PETER PAR with weight 0.007
+SPIDER-MAN/PETER PAR to SPIDER-MAN CLONE/BEN with weight 0.010
+SPIDER-MAN CLONE/BEN to BUZZ with weight 0.067
+total cost: 0.087

@@ -1,0 +1,11 @@
+# Load graph 
+LoadGraph harryPotter harryPotter.tsv
+
+# List the nodes 
+ListNodes harryPotter
+
+# List the children of each node
+ListChildren harryPotter Harry 
+ListChildren harryPotter Ron
+ListChildren harryPotter Voldemort
+ListChildren harryPotter Dementors

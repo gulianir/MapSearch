@@ -1,0 +1,30 @@
+# A complete 5 node graph with many edges
+
+# Create a graph
+created graph testGraph
+
+# Add 5 nodes
+added node Node1 to testGraph
+added node Node2 to testGraph
+added node Node3 to testGraph
+added node Node4 to testGraph
+added node Node5 to testGraph
+
+# Add many edges
+added edge Edge1 from Node1 to Node1 in testGraph
+added edge Edge2 from Node1 to Node2 in testGraph
+added edge Edge3 from Node2 to Node1 in testGraph
+added edge Edge4 from Node2 to Node2 in testGraph
+added edge Edge5 from Node3 to Node4 in testGraph
+added edge Edge6 from Node3 to Node5 in testGraph
+added edge Edge7 from Node4 to Node3 in testGraph
+added edge Edge8 from Node5 to Node4 in testGraph
+added edge Edge9 from Node5 to Node1 in testGraph
+
+# Print the nodes and edges
+testGraph contains: Node1 Node2 Node3 Node4 Node5
+the children of Node1 in testGraph are: Node1(Edge1) Node2(Edge2)
+the children of Node2 in testGraph are: Node1(Edge3) Node2(Edge4)
+the children of Node3 in testGraph are: Node4(Edge5) Node5(Edge6)
+the children of Node4 in testGraph are: Node3(Edge7)
+the children of Node5 in testGraph are: Node1(Edge9) Node4(Edge8)

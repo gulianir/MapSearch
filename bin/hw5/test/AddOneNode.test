@@ -1,0 +1,5 @@
+# Create a graph
+CreateGraph testGraph
+
+# Add 1 node
+AddNode testGraph Node1
